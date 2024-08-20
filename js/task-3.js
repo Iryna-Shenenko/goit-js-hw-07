@@ -1,8 +1,11 @@
-const nameInput = document.querySelector(`#name-input`);
-const nameOutput = document.querySelector(`#name-output`);
 
-nameInput.addEventListener(`input`, () => {
-  output.textContent = event.currentTarget.value;
-});
+const nameInput = document.getElementById('name-input');
+  const nameOutput = document.getElementById('name-output');
 
-const trimmedValue = nameInput.value.trim();
+  nameInput.addEventListener('input', () => {
+    // Отримуємо значення інпуту і видаляємо пробіли по краях
+    const trimmedName = nameInput.value.trim();
+
+    // Перевіряємо, чи значення не порожнє після обрізання пробілів
+    nameOutput.textContent = trimmedName !== '' ? trimmedName : 'Anonymous';
+  });
